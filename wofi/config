@@ -1,0 +1,10 @@
+stylesheet=style.css
+matching=fuzzy
+no_actions=true
+show_all=true
+print_command=true
+layer=overlay
+insensitive=true
+prompt=Search...
+allow_markup=true
+allow_images=true

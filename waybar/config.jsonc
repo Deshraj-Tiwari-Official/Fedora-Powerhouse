@@ -1,0 +1,88 @@
+// -*- mode: jsonc -*-
+{
+  "layer": "top",
+  "spacing": 6,
+  "height": 35,
+  "modules-left": ["hyprland/workspaces","hyprland/window"],
+  "modules-center": ["clock"],
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "backlight",
+    "battery",
+  ],
+
+  // Modules configuration
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{name}",
+  },
+  "hyprland/window": {
+    "max-length": 80,
+    "format": "{title}",
+    "tooltip": true,
+    "tooltip-format": "Current Window: {title}",
+  },
+  "clock": {
+    "timezone": "Asia/Kolkata",
+    "tooltip": false,
+    "format": "{:%H:%M} ",
+    "format-alt": "{:%Y-%m-%d}",
+  },
+  "backlight": {
+    "format": "{percent}% {icon}",
+    "format-icons": ["", "", "", "", "", "", "", "", "󰃠"],
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "decent": 60,
+      "critical": 20,
+    },
+    "format": "{capacity}% {icon}",
+    "format-full": "{capacity}% ",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-icons": ["", "", "", "", ""],
+  },
+  "network": {
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ipaddr}/{cidr} ",
+    "tooltip": false,
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "default": ["", "", ""],
+    },
+    "on-click": "pavucontrol",
+  },
+
+  // Global style
+  "style": {
+    "*": {
+      "background": "#7287FD",
+      "border-radius": "10px",
+      "border": "1px solid #8774E6",
+      "padding": "4px",
+      "color": "#D9E0EE",
+    },
+    "#clock": {
+      "color": "#F5E0DC",
+      "font-weight": "bold",
+    },
+    "#battery": {
+      "color": "#ABE9B3",
+    },
+  },
+}
