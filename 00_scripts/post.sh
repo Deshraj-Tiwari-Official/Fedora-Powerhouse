@@ -50,16 +50,17 @@ echo "   - neovim: Your code fortress"
 echo "   - zsh: A Bash upgrade"
 echo -e "Check your dotfiles if you need keybinds/configs!"
 
+echo -e "\n${magenta}${bold}6. Make your internet cnnection unmetered to use gnome store with no data limit:${reset}"
+echo "${green}   Ask ChatGPT. It is like 3 commands. I am too lazy to write it here.${reset}"
+
 echo -e "\n${magenta}${bold}--- Personal section (Just for Dash ;) ) ---${reset}"
 echo -e "1. Install Zen Browser and Bitwarden by searching on software store of GNOME and install the flatpak version."
 echo "Then log in to bitwarden with your primary email."
+echo "Login to zen browser with your mozilla account. (see it bitwarden), and sign-in to the websites you frequently use (Notion, Youtube, etc.)"
 
 echo -e "\n2. Log into atuin and save the new key."
 
-echo -e "\n3. Now generate a new github key."
-echo -e "Now go to your github account and create a new SSH key by going to github.com/settings/tokens and then generate a new token."
-echo -e "Then create a file like ~/gh_token.txt to store it and yank it whenever required by cat(ing) it and yanking using tmux keybind."
-echo -e "TRY TO FIND A BETTER SOLUTION FOR THIS CUZ I CAN'T RN. This is because it is not only about making it secure but also making it esaily accessible."
-echo -e "This is secure because the ssh key is temporary and the file will only be on ur harware. But, try somehow to get a keybind to paste it (securely)."
+echo -e "\n3. Now setup your SSH for github."
+echo -e "A complete SSH guide (in general and for github) is present in your notion. Just search for SSH in your notion to find it."
 
 echo -e "\n${bold}${magenta}That’s it! Now reboot. Feels good, doesn’t it? XD${reset}"

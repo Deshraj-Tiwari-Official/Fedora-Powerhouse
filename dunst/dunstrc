@@ -1,17 +1,50 @@
 [global]
-frame_color = "#89b4fa"
-separator_color= frame
-font = "JetBrains Mono", 12
+monitor = 0
+width = (300, 500) # Auto-resizing between 300 and 500px
+height = 200
+offset = 10x50
+origin = top-right
+padding = 20
+horizontal_padding = 15
+separator_height = 2
+frame_width = 2
+corner_radius = 10
+idle_threshold = 0
+line_height = 4
+
+### COLORS ###
+frame_color = "#89b4fa"  # Cool blue frame
+separator_color = "#f5e0dc"  # Soft pinkish separator
+
+### FONT & ICONS ###
+font = "JetBrains Mono Bold 12"
+icon_position = left
+icon_theme = "Papirus-Dark" # Change if needed
+format = "<b>%s</b>\n%b"
+
+### OPACITY (Wayland only) ###
+transparency = 10  # 0 (Opaque) to 100 (Fully Transparent)
+
+### ANIMATIONS ###
+progress_bar = true
+progress_bar_frame_width = 1
+progress_bar_height = 5
+progress_bar_corner_radius = 5
 
 [urgency_low]
 background = "#1e1e2e"
-foreground = "#cdd6f4"
+foreground = "#a6adc8"
+timeout = 5
+frame_color = "#b4befe"
 
 [urgency_normal]
 background = "#1e1e2e"
 foreground = "#cdd6f4"
+timeout = 10
+frame_color = "#89b4fa"
 
 [urgency_critical]
 background = "#1e1e2e"
-foreground = "#cdd6f4"
-frame_color = "#fab387"
+foreground = "#f8bd96"
+timeout = 0  # Stays until dismissed
+frame_color = "linear-gradient(90deg, #ff007c, #ffae00)"  # Gradient glow effect

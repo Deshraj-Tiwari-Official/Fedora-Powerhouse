@@ -40,6 +40,9 @@ echo >> /home/deshraj/.bashrc
     eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 brew install yazi nerdfetch sesh lazygit starship yarn
 
+# Setting up flathub
+echo -e "${bold}${magenta}- Setting up flathub...${reset}"
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 # Allowing flatpak to access banana cursor theme
 sudo flatpak override --filesystem=$HOME/.icons

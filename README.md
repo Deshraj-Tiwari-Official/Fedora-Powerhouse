@@ -12,7 +12,24 @@ Hello there, ready to start your journey of setting up your **Fedora Powerhouse*
 
 ---
 
-## **Step 2: Update Your System**
+## **Step 2: Optimize DNF Configuration**
+
+Make your package manager faster by tweaking its configuration:
+
+1. Open the DNF configuration file:
+```bash
+sudo nano /etc/dnf/dnf.conf
+```
+2. Add the following lines at the end of the file:
+```
+max_parallel_downloads=7
+fastestmirror=True
+```
+3. Save and exit (`Ctrl+O`, `Enter`, `Ctrl+X`).
+
+---
+
+## **Step 3: Update Your System**
 
 After installation, update your system to ensure you have the latest packages:
 
@@ -22,24 +39,16 @@ sudo dnf update -y
 
 ---
 
-## **Step 3: Optimize DNF Configuration**
+## **Step 4: Add RPM Fusion Repositories (Free and Non-Free)**
 
-Make your package manager faster by tweaking its configuration:
-
-1. Open the DNF configuration file:
-   ```bash
-   sudo nano /etc/dnf/dnf.conf
-   ```
-2. Add the following lines at the end of the file:
-   ```
-   max_parallel_downloads=7
-   fastestmirror=True
-   ```
-3. Save and exit (`Ctrl+O`, `Enter`, `Ctrl+X`).
+```bash
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm 
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+```
 
 ---
 
-## **Step 4: Connect to Wi-Fi**
+## **Step 5: Connect to Wi-Fi**
 
 If your Wi-Fi isn’t working out of the box, follow these steps:
 
@@ -58,31 +67,21 @@ If your Wi-Fi isn’t working out of the box, follow these steps:
    ```
 
    Replace `<driver-package-name>` with the appropriate driver (e.g., `broadcom-wl` for Broadcom cards).
+   (Logout and login again to apply the changes)
 
-3. **Reboot the System:**
-
-   ```bash
-   reboot
-   ```
-
-4. **Load the Module:**
+3. **Load the Module:**
 
    ```bash
    sudo modprobe wl
    ```
+   (Logout and login again to apply the changes)
 
-5. **Reboot Again:**
-
-   ```bash
-   reboot
-   ```
-
-6. **Connect to Wi-Fi:**
+4. **Connect to Wi-Fi:**
    Use the network manager in your desktop environment to connect to your Wi-Fi network.
 
 ---
 
-## **Step 5: Clone Your Dotfiles Repository**
+## **Step 6: Clone Your Dotfiles Repository**
 
 Set up your development environment by cloning your dotfiles:
 
@@ -92,26 +91,28 @@ git clone https://github.com/Deshraj-Tiwari-Official/Fedora-Powerhouse.git ~/dot
 
 ---
 
-## **Step 6: Run the Setup Script**
+## **Step 7: Run the Setup Script**
 
-Make your setup script executable and run it:
+Make all the shell scripts recursively executable and run the main script:
 
 ```bash
-chmod +x ~/dotfiles/00_scripts/main.sh
+find ~/dotfiles -type f -name "*.sh" -exec chmod +x {} +
 ~/dotfiles/00_scripts/main.sh
 ```
 
+READ the output of the script and follow the instructions to complete the setup.
+
 ---
 
-## **Step 7:Fix Your Hyprland Wallpaper**
+## **Step 8:Fix Your Hyprland Wallpaper**
 
 Replace `deshraj` with the username you created for each line in the file ~/dotfiles/hypr/hyprpaper.conf
 
 ---
 
-## **Step 8: Final Touches**
+## **Step 9: Final Touches**
 
-- Reboot your system one last time to ensure all changes are applied:
+- Reboot once to have a good feeling of the freshly installed Fedora system
   ```bash
   reboot
   ```
@@ -119,3 +120,6 @@ Replace `deshraj` with the username you created for each line in the file ~/dotf
 - Enjoy your freshly configured Fedora Powerhouse!
 
 ---
+
+### Issues (Fix them if you can)
+- The font is not rendering all the icons. Many icons look like random things. 

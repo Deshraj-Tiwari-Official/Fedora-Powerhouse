@@ -1,19 +1,18 @@
 #!/bin/bash
 
-selected=$(echo -e "Shutdown\nReboot\nSuspend\nLogout" | wofi --dmenu --prompt "Select an action:")
+selected=$(echo -e "🛑 Shutdown\n🔄 Reboot\n🌙 Suspend\n🚪 Logout" | wofi --dmenu --prompt "Select an action:")
 
 case $selected in
-    Shutdown)
+    "🛑 Shutdown")
         systemctl poweroff
         ;;
-    Reboot)
+    "🔄 Reboot")
         systemctl reboot
         ;;
-    Suspend)
+    "🌙 Suspend")
         systemctl suspend
         ;;
-    Logout)
+    "🚪 Logout")
         hyprctl dispatch exit
         ;;
 esac
-
