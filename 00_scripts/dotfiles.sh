@@ -1,14 +1,20 @@
 #!/bin/bash
 
-set -e
+# Fancy startup
+sleep 2
+clear
 
-bold=$(tput bold)
-reset=$(tput sgr0)
+# Fancy startup message
+gum style --border rounded --margin "1" --padding "1" --border-foreground 212 "🔥 Setting up your dotfiles... 🔥"
 
-green=$(tput setaf 2)
+# Navigate to dotfiles directory
+gum spin --title "Navigating to ~/dotfiles..." -- cd ~/dotfiles
 
-cd ~/dotfiles
-stow .
-stow -v -t ~ zsh
+# Stowing dotfiles
+gum spin --title "Applying dotfiles..." -- stow .
 
-echo -e "${bold}${green}Successfully setup dotfiles!${reset}"
+# Stowing Zsh separately
+gum spin --title "Configuring Zsh..." -- stow -v -t ~ zsh
+
+# Success message
+gum style --border double --margin "1" --padding "1" --border-foreground 46 "Dotfiles setup susscessfully! ✅"

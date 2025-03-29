@@ -30,7 +30,6 @@ return {
 				ensure_installed = {
 					"lua_ls",
 					"clangd",
-          "gopls",
 				},
 			})
 		end,
@@ -41,7 +40,6 @@ return {
 			local lspconfig = require("lspconfig")
 			lspconfig.lua_ls.setup({})
 			lspconfig.clangd.setup({})
-      lspconfig.gopls.setup({})
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Docs" })
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Goto Definition" })
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Actions" })
@@ -56,7 +54,6 @@ return {
 				sources = {
 					null_ls.builtins.formatting.stylua,
 					null_ls.builtins.formatting.clang_format,
-					null_ls.builtins.formatting.gofumpt,
 				},
 			})
 		end,
