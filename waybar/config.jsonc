@@ -2,7 +2,7 @@
   "layer": "top",
   "spacing": 6,
   "height": 35,
-  "modules-left": ["hyprland/workspaces","hyprland/window"],
+  "modules-left": ["hyprland/workspaces"],
   "modules-center": ["clock"],
   "modules-right": [
     "pulseaudio",
@@ -18,17 +18,11 @@
     "warp-on-scroll": false,
     "format": "{name}"
   },
-  "hyprland/window": {
-    "max-length": 80,
-    "format": "{title}",
-    "tooltip": true,
-    "tooltip-format": "Current Window: {title}"
-  },
   "clock": {
     "timezone": "Asia/Kolkata",
     "tooltip": false,
     "format": "{:%I:%M %p} ",
-    "format-alt": "{:%Y-%m-%d}"
+    "format-alt": "{:%d-%m-%Y}"
   },
   "backlight": {
     "format": "{percent}% *",

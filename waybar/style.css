@@ -1,65 +1,56 @@
-/* ----- General Waybar Styling ----- */
 * {
   font-family: "JetBrains Mono", FontAwesome, sans-serif;
   font-size: 15px;
 }
 
 window#waybar {
-  background: rgba(20, 20, 30, 0.85); /* Dark glass effect without blur */
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.15);
   transition: all 0.3s ease-in-out;
 }
 
-window#waybar.hidden {
-  opacity: 0.1;
-}
-
-/* ----- Workspaces ----- */
 #workspaces button {
-  padding: 5px 10px;
-  background-color: transparent;
-  color: #cdd6f4;
-  border-radius: 8px;
+  background: rgb(20, 20, 30);
+  color: #fff;
+  border-radius: 100%;
   transition: all 0.2s ease-in-out;
+  font-weight: bold;
+  margin: 5px 0;
 }
 
 #workspaces button:hover {
-  background: rgba(205, 214, 244, 0.15);
+  background: rgba(20, 20, 30, 0.8);
 }
 
 #workspaces button.active {
   background: linear-gradient(135deg, #21d190, #1e90ff);
-  color: #1e1e2e;
-  font-weight: bold;
-  box-shadow: 0px 0px 6px rgba(33, 209, 144, 0.5);
+  color: #000;
 }
 
 #workspaces button.urgent {
   background: #ff6f61;
 }
 
-/* ----- Modules ----- */
+/* ----- Modules Styling ----- */
 #clock,
 #battery,
 #backlight,
 #network,
 #pulseaudio {
   padding: 6px 12px;
-  border-radius: 8px;
+  border-radius: 25px;
   margin: 5px 0;
   transition: all 0.3s ease-in-out;
-  color: #ffffff; /* Ensures visibility */
+  color: #ffffff;
 }
 
 #clock {
+  background: rgb(20, 20, 30);
   color: #f5e0dc;
   font-weight: bold;
 }
 
 #battery {
-  background-color: #3b3b40;
+  background: rgb(20, 20, 30);
   color: #abe9b3;
 }
 
@@ -68,17 +59,17 @@ window#waybar.hidden {
 }
 
 #backlight {
-  background: #44475a;
+  background: rgb(20, 20, 30);
   color: #f4e3b2;
 }
 
 #network {
-  background: #44475a;
+  background: rgb(20, 20, 30);
   color: #ffffff;
 }
 
 #pulseaudio {
-  background: #44475a;
+  background: rgb(20, 20, 30);
   color: #a1c4fd;
 }
 
