@@ -16,16 +16,17 @@
     "disable-scroll": true,
     "all-outputs": true,
     "warp-on-scroll": false,
-    "format": "{name}"
+    "format": "  {name}"
   },
   "clock": {
     "timezone": "Asia/Kolkata",
     "tooltip": false,
-    "format": "{:%I:%M %p} ",
-    "format-alt": "{:%d-%m-%Y}"
+    "format": "󰥔 {:%I:%M %p}",
+    "format-alt": "󰃭 {:%d-%m-%Y}"
   },
   "backlight": {
-    "format": "{percent}% *",
+    "format": "{icon} {percent}%",
+    "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
   },
   "battery": {
     "states": {
@@ -33,26 +34,26 @@
       "decent": 60,
       "critical": 20
     },
-    "format": "{capacity}% {icon}",
-    "format-full": "{capacity}% ",
-    "format-charging": "{capacity}% ",
-    "format-plugged": "{capacity}% ",
-    "format-icons": ["", "", "", "", ""]
+    "format": "{icon} {capacity}%",
+    "format-full": "󰁹 {capacity}% ",
+    "format-charging": "󰂄 {capacity}% ",
+    "format-plugged": "󰚥 {capacity}%",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
   },
   "network": {
-    "format-wifi": "{essid} ({signalStrength}%) ",
-    "format-ethernet": "{ipaddr}/{cidr} ",
+    "format-wifi": "  {essid} ({signalStrength}%)",
+    "format-ethernet": " {ipaddr}/{cidr}",
     "tooltip": false,
-    "format-linked": "{ifname} (No IP) ",
-    "format-disconnected": "Disconnected ⚠",
-    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    "format-linked": " {ifname} (No IP)",
+    "format-disconnected": "󰌙 Disconnected",
+    "format-alt": " {ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {
-    "format": "{volume}% {icon}",
-    "format-bluetooth": "{volume}%  {icon}",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon} {volume}% 󰂯",
     "format-muted": "󰖁",
     "format-icons": {
-      "default": ["", "", ""]
+      "default": ["󰕿", "󰖀", "󰕾"]
     },
     "on-click": "pavucontrol"
   }

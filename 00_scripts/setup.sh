@@ -25,7 +25,7 @@ run_with_status "Installing essential tools..." "sudo dnf install -y git curl wg
 
 ### Install setup tools (Fix: Handle 'already installed' case) ###
 gum spin --title "Installing setup tools..." -- bash -c "
-    sudo dnf install -y --allowerasing stow btop zoxide fzf bat ripgrep jetbrains-mono-fonts-all tmux eza hyprlock clipman hyprpicker hypridle pavucontrol brightnessctl power-profiles-daemon xdg-desktop-portal-wlr neovim zsh kitty hyprland dunst waybar wofi lz4 lz4-devel cargo
+    sudo dnf install -y --allowerasing stow btop zoxide fzf bat ripgrep tmux eza hyprlock clipman hyprpicker hypridle pavucontrol brightnessctl power-profiles-daemon xdg-desktop-portal-wlr neovim zsh kitty hyprland dunst waybar wofi lz4 lz4-devel cargo fastfetch
 "
 if sudo dnf check-update --quiet; then
     echo "Successful: Setup tools installation ✅"
@@ -58,6 +58,16 @@ else
         sudo flatpak override --filesystem=\$HOME/.icons
     " "Flathub setup completion"
 fi
+
+### Setting up Font ###
+run_with_status "Setting up Font..." "
+    mkdir -p ~/.fonts
+    cd ~/.fonts
+    for file in *.tar.xz; do
+        gum spin --title 'Extracting $file...' -- tar -xvf '$file' -C ~/.fonts
+    done
+    fc-cache -fv
+" "Font setup completion"
 
 ### Final notes ###
 gum style --border double --margin "1" --padding "1" --border-foreground 46 "Setup completed successfully! ✅"

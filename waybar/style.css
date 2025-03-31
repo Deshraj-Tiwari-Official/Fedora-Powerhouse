@@ -1,5 +1,5 @@
 * {
-  font-family: "JetBrains Mono", FontAwesome, sans-serif;
+  font-family: "JetBrainsMono Nerd Font", FontAwesome, sans-serif;
   font-size: 15px;
 }
 
@@ -11,7 +11,7 @@ window#waybar {
 #workspaces button {
   background: rgb(20, 20, 30);
   color: #fff;
-  border-radius: 100%;
+  border-radius: 10px;
   transition: all 0.2s ease-in-out;
   font-weight: bold;
   margin: 5px 0;
