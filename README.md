@@ -113,8 +113,3 @@ READ the output of the script and follow the instructions to complete the setup.
   ```
   - Remember to boot in Hyprland this time :) {There would be a tiny gear icon in the login screen to do so}
 - Enjoy your freshly configured Fedora Powerhouse!
-
----
-
-### Issues (Fix them if you can)
-- The font is not rendering all the icons. Many icons look like random things. 
