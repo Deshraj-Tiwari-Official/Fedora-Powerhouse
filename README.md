@@ -105,12 +105,6 @@ READ the output of the script and follow the instructions to complete the setup.
 
 ---
 
-## **Step 8:Fix Your Hyprland Wallpaper**
-
-Replace `deshraj` with the username you created for each line in the file ~/dotfiles/hypr/hyprpaper.conf
-
----
-
 ## **Step 9: Final Touches**
 
 - Reboot once to have a good feeling of the freshly installed Fedora system
