@@ -2,6 +2,9 @@
 
 Hello there, ready to start your journey of setting up your **Fedora Powerhouse**? This guide will walk you through every step to get your Fedora system up and running with a fully customized development environment. Just follow these steps, and you'll be there in no time!
 
+> [!NOTE]
+> To paste the commands in the terminal, use `Ctrl+Shift+V`.
+
 ---
 
 ## **Step 1: Install Fedora Workstation**
@@ -67,17 +70,15 @@ If your Wi-Fi isn’t working out of the box, follow these steps:
    ```
 
    Replace `<driver-package-name>` with the appropriate driver (e.g., `broadcom-wl` for Broadcom cards).
-   (Logout and login again to apply the changes)
+   (Reboot to apply the changes)
 
 3. **Load the Module:**
 
    ```bash
    sudo modprobe wl
    ```
-   (Logout and login again to apply the changes)
-
 4. **Connect to Wi-Fi:**
-   Use the network manager in your desktop environment to connect to your Wi-Fi network.
+   Use the menu of GNOME in top right to connect to your Wi-Fi network. (logout and login if not working)
 
 ---
 
@@ -93,11 +94,11 @@ git clone https://github.com/Deshraj-Tiwari-Official/Fedora-Powerhouse.git ~/dot
 
 ## **Step 7: Run the Setup Script**
 
-Make all the shell scripts recursively executable and run the main script:
+Make all the shell scripts recursively executable and run the setup script:
 
 ```bash
 find ~/dotfiles -type f -name "*.sh" -exec chmod +x {} +
-~/dotfiles/00_scripts/main.sh
+~/dotfiles/00_scripts/setup.sh
 ```
 
 READ the output of the script and follow the instructions to complete the setup.

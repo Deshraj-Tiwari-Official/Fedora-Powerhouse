@@ -48,12 +48,14 @@ echo "Check your dotfiles if you need keybinds/configs!"
 
 # Internet unmetered
 gum format --theme=dracula "# 6. Make your internet connection unmetered for the GNOME Store:"
-gum style --foreground 34 "   Ask ChatGPT. It is like 3 commands. I am too lazy to write it here."
+gum style --foreground 34 "   nmcli connection show"
+gum style --foreground 34 "   sudo nmcli connection modify 'Your Wi-Fi Name' connection.metered no"
+gum style --foreground 34 "   sudo nmcli connection up 'Your Wi-Fi Name'"
 
 # Personal section for Dash 😉
 gum style --border rounded --margin "1" --padding "1" --border-foreground 212 "💀 --- Personal Section (Just for Dash 😉) --- 💀"
 
-echo "1️⃣ Install Zen Browser & Bitwarden from GNOME Software (flatpak versions)."
+echo "1️⃣ Install Zen Browser & Bitwarden from GNOME Software (Store flatpak versions)."
 echo "   - Login to Bitwarden with your primary email."
 echo "   - Log into Zen Browser with your Mozilla account (check Bitwarden)."
 echo "   - Sign into your frequently used websites (Notion, YouTube, etc.)."
@@ -61,7 +63,7 @@ echo "   - Sign into your frequently used websites (Notion, YouTube, etc.)."
 echo -e "\n2️⃣ Log into atuin and save the new key."
 
 echo -e "\n3️⃣ Setup your SSH for GitHub."
-echo "   - A complete SSH guide (general & for GitHub) is in your Notion. Just search for **SSH**."
+echo "   - A complete SSH guide (general & for GitHub) is in your Notion. Just search for **SSH** in your notion."
 
 # Final message
 gum style --border double --margin "1" --padding "1" --border-foreground 46 "✅ That’s it! Now reboot. Feels good, doesn’t it? XD ✅"

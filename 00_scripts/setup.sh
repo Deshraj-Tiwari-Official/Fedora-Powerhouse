@@ -8,6 +8,8 @@ clear
 gum style --border rounded --margin "1" --padding "1" --border-foreground 212 "🔥 Welcome to Deshraj's Setup Script! 🔥"
 gum confirm "Ready to start the setup of your Fedora Powerhouse?" || exit 1
 
+gum style --foreground 34 "This is going to take a few minutes, so go listen to some music or something. 🎶"
+
 ### Function to run a command and display success/failure message ###
 run_with_status() {
     gum spin --title "$1" -- bash -c "$2"
@@ -21,17 +23,22 @@ run_with_status() {
 }
 
 ### Install base tools ###
-run_with_status "Installing essential tools..." "sudo dnf install -y git curl wget p7zip tar rsync aria2 unzip" "Essential tools installed"
+run_with_status "Installing essential tools..." "sudo dnf install -y git curl wget p7zip tar rsync aria2 unzip" "Essential tools installation"
 
-### Install setup tools (Fix: Handle 'already installed' case) ###
-gum spin --title "Installing setup tools..." -- bash -c "
+### Install setup tools ###
+run_with_status "Installing setup tools..." "
     sudo dnf install -y --allowerasing stow btop zoxide fzf bat ripgrep tmux eza hyprlock clipman hyprpicker hypridle pavucontrol brightnessctl power-profiles-daemon xdg-desktop-portal-wlr neovim zsh kitty hyprland dunst waybar wofi lz4 lz4-devel cargo fastfetch
-"
-if sudo dnf check-update --quiet; then
-    echo "Successful: Setup tools installation ✅"
-else
-    echo "⚠ Setup tools already installed (or no changes needed) ⚠"
-fi
+    sudo dnf update -y
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+    curl --proto '=https' --tlsv1.2 -LsSf https://setup.atuin.sh | sh
+    mkdir -p ~/git
+    cd ~/git
+    git clone https://github.com/LGFae/swww
+    cd swww
+    cargo build --release
+    sudo mv target/release/swww /usr/local/bin
+    sudo mv target/release/swww-daemon /usr/local/bin
+" "Setup tools installation"
 
 ### Apply Catppuccin Mocha theme to Bat ###
 run_with_status "Applying Catppuccin Mocha theme to Bat..." "
@@ -59,15 +66,23 @@ else
     " "Flathub setup completion"
 fi
 
-### Setting up Font ###
-run_with_status "Setting up Font..." "
-    mkdir -p ~/.fonts
-    cd ~/.fonts
-    for file in *.tar.xz; do
-        gum spin --title 'Extracting $file...' -- tar -xvf '$file' -C ~/.fonts
-    done
+### Setting up Font and Cursor ###
+run_with_status "Setting up Font and Cursor..." "
+    mkdir -p ~/.fonts && mkdir -p ~/.icons
+    gum spin --title 'Extracting font...' -- tar -xvf ~/dotfiles/00_scripts/assets/JetBrainsMono-Minimal.tar.xz -C ~/.fonts
+    gum spin --title 'Extracting cursor...' -- tar -xvf ~/dotfiles/00_scripts/assets/Banana-Dracula.tar.xz -C ~/.icons
     fc-cache -fv
 " "Font setup completion"
 
+### Setting up dotfiles ###
+run_with_status "Setting up dotfiles..." "
+    cd ~/dotfiles
+    stow .
+    stow -v -t ~ zsh
+" "Dotfiles setup completion"
+
 ### Final notes ###
 gum style --border double --margin "1" --padding "1" --border-foreground 46 "Setup completed successfully! ✅"
+
+### Run Post-Setup script ###
+~/dotfiles/00_scripts/post.sh
