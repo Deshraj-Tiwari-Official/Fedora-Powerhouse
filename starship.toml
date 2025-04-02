@@ -12,6 +12,7 @@ $character"""
 right_format = """
 $cmd_duration\
 """
+command_timeout = 2000
 
 [directory]
 style = "blue"

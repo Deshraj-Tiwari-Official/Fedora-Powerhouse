@@ -48,6 +48,7 @@ fc-cache -fv
 
 # Use stow to symlink dotfiles
 cd ~/dotfiles
+sudo rm -rf ~/.zshrc
 stow . 
 stow -v -t ~ zsh
 
