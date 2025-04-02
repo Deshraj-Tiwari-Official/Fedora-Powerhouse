@@ -70,5 +70,7 @@ gum format --theme=dracula "# 2. Login into atuin and then save the new key"
 gum format --theme=dracula "# 3. Setup your SSH for GitHub."
 echo "   - A complete SSH guide (general & for GitHub) is in your Notion. Just search for **SSH** in your notion."
 
+gum style --border rounded --margin "1" --padding "1" --border-foreground 212 "Press Ctrl + K, I bet you will like it."
+
 # Final message
 gum style --border double --margin "1" --padding "1" --border-foreground 46 "✅ That’s it! Now reboot. Feels good, doesn’t it? XD ✅"
