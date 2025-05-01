@@ -42,7 +42,7 @@ sudo flatpak override --filesystem=$HOME/.icons
 
 # Install fonts and icons
 mkdir -p ~/.fonts ~/.icons
-tar -xvf ~/dotfiles/00_scripts/assets/JetBrainsMono-Minimal.tar.xz -C ~/.fonts
+tar -xvf ~/dotfiles/00_scripts/assets/fonts.tar.xz -C ~/.fonts/
 tar -xvf ~/dotfiles/00_scripts/assets/Banana-Dracula.tar.xz -C ~/.icons
 fc-cache -fv
 
