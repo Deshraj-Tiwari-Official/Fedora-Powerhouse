@@ -48,3 +48,7 @@ background = "#1e1e2e"
 foreground = "#f8bd96"
 timeout = 0  # Stays until dismissed
 frame_color = "linear-gradient(90deg, #ff007c, #ffae00)"  # Gradient glow effect
+
+[play_sound]
+summary = "*"
+script = ~/.config/dunst/notify_sound.sh
