@@ -1,6 +1,6 @@
 #!/bin/bash
 
-main_menu=" Apps\n󰖟 Browser Search\n Calc\n Emoji\n Files\n Power Menu"
+main_menu="Apps  \nBrowser Search 󰖟 \nCalc  \nEmoji  \nPower Menu  "
 
 choice=$(echo -e "$main_menu" | wofi --dmenu --prompt "Spotlight Search")
 
@@ -25,9 +25,6 @@ case "$choice" in
     ;;
   " Emoji")
     ~/.config/hypr/config.d/scripts/spotlight_feats/emoji_picker.sh
-    ;;
-  " Files")
-    ########### FILE SEARCH LOGIC HERE ###########
     ;;
   " Power Menu")
     ~/.config/hypr/config.d/scripts/spotlight_feats/powermenu.sh
