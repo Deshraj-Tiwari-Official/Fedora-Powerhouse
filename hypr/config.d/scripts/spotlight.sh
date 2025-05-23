@@ -5,16 +5,16 @@ main_menu="Apps  \nBrowser Search 󰖟 \nCalc  \nEmoji  \nPower Menu �
 choice=$(echo -e "$main_menu" | wofi --dmenu --prompt "Spotlight Search")
 
 case "$choice" in
-  " Apps")
+  "Apps  ")
     wofi --show drun
     ;;
-  "󰖟 Browser Search")
+  "Browser Search 󰖟 ")
     query=$(wofi --dmenu --height 1)
     if [[ -n "$query" ]]; then
       xdg-open "https://duckduckgo.com/?q=$(echo "$query" | sed 's/ /+/g')"
     fi
     ;;
-  " Calc")
+  "Calc  ")
     expr=$(wofi --dmenu --height 1)
     result=$(echo "$expr" | bc -l 2>/dev/null)
     if [[ -n "$result" ]]; then
@@ -23,10 +23,10 @@ case "$choice" in
       notify-send " Invalid expression"
     fi
     ;;
-  " Emoji")
+  "Emoji  ")
     ~/.config/hypr/config.d/scripts/spotlight_feats/emoji_picker.sh
     ;;
-  " Power Menu")
+  "Power Menu  ")
     ~/.config/hypr/config.d/scripts/spotlight_feats/powermenu.sh
     ;;
   *)
